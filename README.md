@@ -1,6 +1,6 @@
 # LNMP CentOS Docker
 
-LNMP1.2 (Linux, nginx, mysql, php) Centos6.7 for docker file. For details, please check LNMP.org
+LNMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
 CentOS verison: 6.7
 
