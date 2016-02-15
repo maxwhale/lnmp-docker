@@ -14,7 +14,7 @@ Root password: LNMP123
 
 Mysql root password: LNMP123
 
-## Docker Command Examples
+## Usage
 
 ```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lnmp-docker ./run.sh```
 
