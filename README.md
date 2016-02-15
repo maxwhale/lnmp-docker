@@ -1,6 +1,6 @@
 # LNMP CentOS Docker
 
-LNMP1.2 (Linux, nginx, mysql, php) Centos6.7 for docker file, more details check: LNMP.org
+LNMP1.2 (Linux, nginx, mysql, php) Centos6.7 for docker file. For details, please check LNMP.org
 
 CentOS verison: 6.7
 
@@ -14,8 +14,10 @@ Root password: LNMP123
 
 Mysql root password: LNMP123
 
-After login SSH, run lnmp start
+After login SSH, run 
+
+```lnmp start```
 
 # Docker运行命令示例
 
-docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lnmp1.2-centos6.7-docker ./run.sh
+```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lnmp1.2-centos6.7-docker ./run.sh```
