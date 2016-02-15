@@ -18,7 +18,7 @@ After login SSH, run
 
 ```lnmp start```
 
-# Docker Command Examples(3)
+## Docker Command Examples
 
 ```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lnmp-docker ./run.sh```
 
