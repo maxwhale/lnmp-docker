@@ -2,7 +2,7 @@
 
 LNMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
-CentOS verison: 6.7
+CentOS verison: 6.7 (64bit)
 
 Nginx version: 1.8.0
 
