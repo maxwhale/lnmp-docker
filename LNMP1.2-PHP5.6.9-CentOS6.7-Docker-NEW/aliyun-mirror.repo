@@ -1,0 +1,50 @@
+[base]
+name=CentOS-$releasever - Base
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/
+http://mirrors.aliyuncs.com/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
+http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
+ 
+#released updates 
+[updates]
+name=CentOS-$releasever - Updates
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos/$releasever/updates/$basearch/
+http://mirrors.aliyuncs.com/centos/$releasever/updates/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
+http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
+ 
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos/$releasever/extras/$basearch/
+http://mirrors.aliyuncs.com/centos/$releasever/extras/$basearch/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
+http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
+ 
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos/$releasever/centosplus/$basearch/
+http://mirrors.aliyuncs.com/centos/$releasever/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
+http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
+ 
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos/$releasever/contrib/$basearch/
+http://mirrors.aliyuncs.com/centos/$releasever/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
+http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
