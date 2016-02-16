@@ -1,14 +1,14 @@
-# LNMP1.2-PHP5.3.29-CentOS6.7-Docker
+# LAMP1.2-PHP5.6.9-CentOS6.7-Docker
 
-LNMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
+LAMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
-CentOS verison: 6.7 (64bit)
+CentOS verison: 6.7
 
-Nginx version: 1.8.0
+Apache version: 2.2.29
 
 Mysql verison: 5.5
 
-PHP verison: 5.3.29
+PHP verison: 5.6.9
 
 Root password: LNMP123
 
