@@ -20,10 +20,10 @@ ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 # Update
 RUN yum -y update
 
+# SSH
 RUN yum -y install openssh-server && \
     sed -i 's/PasswordAuthentication\ yes/PasswordAuthentication\ no/' /etc/ssh/sshd_config && echo 'AllowUsers dev' >> /etc/ssh/sshd_config
 
-    
 # Install wget tar screen htop passwd nano packages
 RUN yum -y install wget tar screen htop passwd nano
 
