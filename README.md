@@ -64,6 +64,7 @@ Root password: LNMP123
 
 Mysql root password: LNMP123
 
+
 					LNMP一键安装包 - Readme
 
 LNMP一键安装包是什么?
