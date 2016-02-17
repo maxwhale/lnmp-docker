@@ -16,7 +16,6 @@ ENV TERM xterm
 ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
-# Update
 RUN yum -y update
 
 RUN yum -y install wget tar screen htop passwd nano openssh-server && \
@@ -24,7 +23,6 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server && \
     sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && \
     sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
-# Download and install lnmp1.2
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
 
 ADD centos.sh /root/lnmp1.2-full/centos.sh
