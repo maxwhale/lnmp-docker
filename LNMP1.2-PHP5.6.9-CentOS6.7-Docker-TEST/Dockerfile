@@ -61,7 +61,12 @@ ENV ROOT_PASS LNMP123
 VOLUME ["/home"]
 
 # Expose ports.
-EXPOSE 80 21 22 3306 6379 11211
+EXPOSE 80 
+EXPOSE 21 
+EXPOSE 22 
+EXPOSE 3306 
+EXPOSE 6379 
+EXPOSE 11211
 
 # Define default command.
 CMD ["/run.sh"]
