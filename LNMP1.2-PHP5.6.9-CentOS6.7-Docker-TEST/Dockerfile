@@ -35,6 +35,8 @@ RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-che
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
+
+# Set permission
 RUN chmod +x /root/lnmp1.2-full/centos.sh
 
 # Install LNMP1.2
@@ -47,7 +49,9 @@ RUN cd /root/lnmp1.2-full/src && \
 
 # Add run file
 ADD run.sh /run.sh
-RUN chmod +x /*.sh
+
+# Set permission 
+RUN chmod +x /run.sh
 
 # Set environment variables.
 ENV AUTHORIZED_KEYS **None**
