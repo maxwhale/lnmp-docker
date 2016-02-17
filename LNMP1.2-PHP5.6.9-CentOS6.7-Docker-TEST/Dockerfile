@@ -11,7 +11,7 @@
 FROM centos:6.7
 MAINTAINER Max
 
-# Modify Timezone.
+# Modify timezone.
 ENV TZ "Asia/Shanghai"
 ENV TERM xterm
 
@@ -41,7 +41,7 @@ RUN chmod +x /root/lnmp1.2-full/centos.sh
 RUN cd /root/lnmp1.2-full && \   
     ./centos.sh
 
-# Delete lnmp1.2-full folder trash files 
+# Delete trash files in lnmp1.2-full folder 
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
 
@@ -49,6 +49,7 @@ RUN cd /root/lnmp1.2-full/src && \
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
+# Set environment variables.
 ENV AUTHORIZED_KEYS **None**
 ENV ROOT_PASS LNMP123
 
