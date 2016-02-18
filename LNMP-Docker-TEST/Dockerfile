@@ -46,7 +46,7 @@ RUN cd /root/lnmp1.2-full && \
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
 
-# Add run file.
+# Add run files.
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 
