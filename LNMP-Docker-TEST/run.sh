@@ -20,7 +20,7 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
 fi
 
 if [ ! -f /.root_pw_set ]; then
-    /set_root_pw.sh
+	/set_root_pw.sh
 fi
 
 service nginx start
