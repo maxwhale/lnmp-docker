@@ -3,7 +3,7 @@
 # DOCKER-VERSION      1.10
 # CENTOS-VERSION      6.7
 # LNMP-VERSION        1.2 www.lnmp.org
-# Dockerfile-VERSION  2.0
+# Dockerfile-VERSION  2.2
 # DATE                02/18/2016
 #
 
