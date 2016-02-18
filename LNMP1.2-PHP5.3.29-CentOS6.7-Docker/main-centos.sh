@@ -153,8 +153,8 @@ Apache_Selection()
 {
     echo "==========================="
 #set Server Administrator Email Address
-    ServerAdmin="webmaster@example.com"
-    #read -p "Please enter Administrator Email Address:" ServerAdmin
+    ServerAdmin=""
+    read -p "Please enter Administrator Email Address:" ServerAdmin
     if [ "${ServerAdmin}" == "" ]; then
         echo "Administrator Email Address will set to webmaster@example.com!"
         ServerAdmin="webmaster@example.com"
@@ -171,7 +171,7 @@ Apache_Selection()
     Echo_Yellow "You have 2 options for your Apache install."
     echo "1: Install Apache 2.2.29 (Default)"
     echo "2: Install Apache 2.4.10"
-   # read -p "Enter your choice (1 or 2): " ApacheSelect
+    read -p "Enter your choice (1 or 2): " ApacheSelect
 
     if [ "${ApacheSelect}" = "1" ]; then
         echo "You will install Apache 2.2.29"

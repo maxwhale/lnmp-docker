@@ -11,7 +11,7 @@ fi
 cur_dir=$(pwd)
 Stack=$1
 if [ "${Stack}" = "" ]; then
-    Stack="lamp"
+    Stack="lnmp"
 else
     Stack=$1
 fi
