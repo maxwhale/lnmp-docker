@@ -19,6 +19,10 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     done
 fi
 
+if [ ! -f /.root_pw_set ]; then
+    /set_root_pw.sh
+fi
+
 service nginx start
 
 service mysql start

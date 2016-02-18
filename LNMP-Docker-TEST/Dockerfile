@@ -23,10 +23,9 @@ ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 RUN yum -y update
 
 # Install packages & SSH service.
-RUN yum -y install wget tar screen htop passwd nano openssh-server && \
-    sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
-    sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && \
-    sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
+RUN yum -y install wget tar screen htop passwd nano openssh-server pwgen && \
+    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
+    sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download & extract lnmp1.2-full.tar.gz & delete lnmp1.2-full.tar.gz.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
