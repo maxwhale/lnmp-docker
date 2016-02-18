@@ -47,10 +47,11 @@ RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
 
 # Add run file.
+ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 
-# Set permission. 
-RUN chmod +x /run.sh
+# Set permission.
+RUN chmod +x /*.sh
 
 # Set environment variables.
 ENV AUTHORIZED_KEYS **None**
