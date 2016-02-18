@@ -39,7 +39,7 @@ ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
 RUN chmod +x /root/lnmp1.2-full/centos.sh
 RUN cd /root/lnmp1.2-full && \   
-    ./centos.sh lamp
+    ./centos.sh
 
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
