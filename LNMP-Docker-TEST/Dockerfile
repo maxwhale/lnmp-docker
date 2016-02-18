@@ -19,17 +19,11 @@ ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 # Update
 RUN yum -y update
 
-RUN yum -y install openssh-server && \
-    yum -y install pwgen && \
-    rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key && \
-    ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
+RUN yum -y install wget tar screen htop passwd nano openssh-server pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_dsa_key && \
     sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
-    
-# Install wget tar screen htop passwd nano packages
-RUN yum -y install wget tar screen htop passwd nano
 
 # Download and install lnmp1.2.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
@@ -53,6 +47,11 @@ ENV ROOT_PASS LNMP123
 
 VOLUME ["/home"]
 
-EXPOSE 80 21 22 3306 6379 11211
+EXPOSE 80 
+EXPOSE 21 
+EXPOSE 22 
+EXPOSE 3306 
+EXPOSE 6379 
+EXPOSE 11211
 
 CMD ["/run.sh"]
