@@ -1,11 +1,10 @@
 #
-# MAINTAINER        Max
-# DOCKER-VERSION    1.10
-# CENTOS-VERSION    6.7
-# LNMP-VERSION      1.2 www.lnmp.org
-# VERSION           1.0
-# DATE              02/08/2016
-# Dockerfile for building LNMP image base on Centos6.7
+# MAINTAINER          Max
+# DOCKER-VERSION      1.10
+# CENTOS-VERSION      6.7
+# LNMP-VERSION        1.2 www.lnmp.org
+# Dockerfile-VERSION  2.0
+# DATE                02/18/2016
 #
 
 FROM centos:6.7

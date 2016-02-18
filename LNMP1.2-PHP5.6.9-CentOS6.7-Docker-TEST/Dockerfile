@@ -1,10 +1,10 @@
 #
-# MAINTAINER         Max
-# DOCKER-VERSION     1.10
-# CENTOS-VERSION     6.7
-# LNMP-VERSION       1.2 www.lnmp.org
-# Dockerfile-VERSION 2.0
-# DATE               02/17/2016
+# MAINTAINER          Max
+# DOCKER-VERSION      1.10
+# CENTOS-VERSION      6.7
+# LNMP-VERSION        1.2 www.lnmp.org
+# Dockerfile-VERSION  2.0
+# DATE                02/18/2016
 #
 
 # Pull base image.
