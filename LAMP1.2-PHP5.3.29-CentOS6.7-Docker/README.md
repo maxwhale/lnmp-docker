@@ -16,6 +16,8 @@ Mysql root password: LNMP123
 
 ## Usage
 
+```docker pull registry.aliyuncs.com/max/lamp1.2-php5.3.29-centos6.7```
+
 ```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lamp1.2-php5.3.29-centos6.7 ./run.sh```
 
 ```docker run --restart=always -P -ti --name LNMP registry.aliyuncs.com/max/lamp1.2-php5.3.29-centos6.7 ./run.sh```
