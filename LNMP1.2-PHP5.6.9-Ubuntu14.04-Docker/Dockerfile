@@ -18,11 +18,8 @@ ADD sources.list /etc/apt/sources.list
 # Update
 RUN apt-get -y update
 
-RUN apt-get -y install wget tar screen htop passwd nano openssh-server pwgen && \
-    ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
-    ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_dsa_key && \
-    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
-    sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget tar screen htop passwd nano openssh-server pwgen
+RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.2.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
