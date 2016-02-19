@@ -3,8 +3,8 @@
 # DOCKER-VERSION      1.10
 # UBUNTU-VERSION      14.04
 # LNMP-VERSION        1.2 www.lnmp.org
-# Dockerfile-VERSION  2.2
-# DATE                02/19/2016
+# Dockerfile-VERSION  2.3
+# DATE                02/20/2016
 #
 
 FROM ubuntu:14.04
