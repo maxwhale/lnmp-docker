@@ -23,10 +23,10 @@ if [ ! -f /.root_pw_set ]; then
 	/set_root_pw.sh
 fi
 
-service nginx start
+lnmp nginx start
 
-service mysql start
+lnmp mysql start
 
-service php-fpm start
+lnmp php-fpm start
 
 exec /usr/sbin/sshd -D
