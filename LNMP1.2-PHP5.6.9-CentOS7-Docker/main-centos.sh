@@ -34,7 +34,7 @@ Dispaly_Selection()
 #which MySQL Version do you want to install?
     echo "==========================="
 
-    DBSelect="2"
+    DBSelect="3"
     Echo_Yellow "You have 5 options for your DataBase install."
     echo "1: Install MySQL 5.1.73"
     echo "2: Install MySQL 5.5.42 (Default)"
@@ -61,7 +61,7 @@ Dispaly_Selection()
     ;;
     *)
         echo "No input,You will install MySQL 5.5.42"
-        DBSelect="2"
+        DBSelect="3"
     esac
 
     if [ "${DBSelect}" = "4" ] || [ "${DBSelect}" = "5" ]; then
