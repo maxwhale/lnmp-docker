@@ -3,8 +3,8 @@
 # DOCKER-VERSION      1.10
 # CENTOS-VERSION      7
 # LNMP-VERSION        1.2 www.lnmp.org
-# Dockerfile-VERSION  2.3
-# DATE                02/20/2016
+# Dockerfile-VERSION  2.4
+# DATE                02/23/2016
 #
 
 FROM centos:7

@@ -4,7 +4,7 @@
 # CENTOS-VERSION      6.7
 # LNMP-VERSION        1.2 www.lnmp.org
 # Dockerfile-VERSION  2.4
-# DATE                02/22/2016
+# DATE                02/23/2016
 #
 
 FROM centos:6.7
