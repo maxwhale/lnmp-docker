@@ -1,6 +1,6 @@
 # LAMP1.2-PHP5.6.9-CentOS6.7-Docker
 
-LAMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
+LAMP1.2 (Linux, Apache, Mysql, PHP). For details, please check LNMP.org
 
 CentOS verison: 6.7
 

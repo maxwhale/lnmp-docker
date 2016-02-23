@@ -1,0 +1,25 @@
+# LAMP1.2-PHP5.6.9-Ubuntu14.04-Docker
+
+LAMP1.2 (Linux, Apache, Mysql, PHP). For details, please check LNMP.org
+
+Ubuntu verison: 14.04 (64bit)
+
+Apache version: 2.2.29
+
+Mysql verison: 5.5
+
+PHP verison: 5.6.9
+
+Root password: LNMP123
+
+Mysql root password: LNMP123
+
+## Usage
+
+```docker pull registry.aliyuncs.com/max/lamp1.2-php5.6.9-ubuntu14.04```
+
+```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lamp1.2-php5.6.9-ubuntu14.04 ./run.sh```
+
+```docker run --restart=always -P -ti --name LNMP registry.aliyuncs.com/max/lamp1.2-php5.6.9-ubuntu14.04 ./run.sh```
+
+```docker run --restart=always -e VIRTUAL_HOST=test1.test.com -p 30000:80 -p 30001:21 -p 30002:22 -p 30003:3306 -p 30004:6379 -p 30005:11211 -ti --name LNMP registry.aliyuncs.com/max/lamp1.2-php5.6.9-ubuntu14.04 ./run.sh```
