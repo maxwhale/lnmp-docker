@@ -13,11 +13,11 @@ MAINTAINER Max
 ENV TZ "Asia/Shanghai"
 ENV TERM xterm
 
-#ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
-#ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
+ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
+ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
 # Update
-# RUN yum -y update
+RUN yum -y update
 
 RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
