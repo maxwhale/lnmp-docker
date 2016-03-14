@@ -17,7 +17,7 @@ else
 fi
 
 LNMP_Ver='1.3'
-. lnmp.conf
+#. lnmp.conf
 . include/main-centos.sh
 . include/init.sh
 . include/mysql.sh
