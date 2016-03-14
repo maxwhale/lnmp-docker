@@ -28,7 +28,7 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
 # Download and install lnmp1.3.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.3beta-full.tar.gz --no-check-certificate && tar zxf lnmp1.3beta-full.tar.gz -C root && rm -rf lnmp1.3beta-full.tar.gz
 
-ADD centos.sh /root/lnmp1.3beta-full/install.sh
+ADD install.sh /root/lnmp1.3beta-full/install.sh
 ADD main.sh /root/lnmp1.3beta-full/include/main.sh
 ADD version.sh /root/lnmp1.3beta-full/include/version.sh
 RUN chmod +x /root/lnmp1.3beta-full/install.sh
