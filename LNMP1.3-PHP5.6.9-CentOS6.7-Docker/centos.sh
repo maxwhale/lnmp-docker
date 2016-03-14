@@ -17,8 +17,8 @@ else
 fi
 
 LNMP_Ver='1.3'
-#. lnmp.conf
-. include/main-centos.sh
+. lnmp.conf
+. include/main.sh
 . include/init.sh
 . include/mysql.sh
 . include/mariadb.sh
@@ -165,7 +165,7 @@ LAMP_Stack()
         Install_Apache_22
     else
         Install_Apache_24
-    fi    
+    fi
     if [ "${PHPSelect}" = "1" ]; then
         Install_PHP_52
     elif [ "${PHPSelect}" = "2" ]; then

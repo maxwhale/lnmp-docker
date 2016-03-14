@@ -214,7 +214,7 @@ Kill_PM()
     stty -icanon -echo min 1 time 0
     #dd count=1 2>/dev/null
     stty ${OLDCONFIG}
-    . include/version-centos.sh
+    . include/version.sh
 
 
 Press_Start()
