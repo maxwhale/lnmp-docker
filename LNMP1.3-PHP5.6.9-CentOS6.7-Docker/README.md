@@ -1,4 +1,4 @@
-# LNMP1.3-PHP5.6.9-CentOS6.7-Docker
+# LNMP1.3-PHP7.0.3-CentOS6.7-Docker
 
 LNMP1.3 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
