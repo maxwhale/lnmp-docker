@@ -33,7 +33,7 @@ ADD main-centos.sh /root/lnmp1.3beta-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.3beta-full/include/version-centos.sh
 RUN chmod +x /root/lnmp1.3beta-full/centos.sh
 RUN cd /root/lnmp1.3beta-full && \   
-    ./centos.sh
+    ./centos.sh lnmp
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
