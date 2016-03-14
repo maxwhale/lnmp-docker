@@ -29,7 +29,7 @@ elif [ "${DBSelect}" = "5" ]; then
 elif [ "${DBSelect}" = "6" ]; then
     Mysql_Ver='mysql-5.7.11'
 fi
-Php_Ver='php-7.0.3'
+Php_Ver='php-5.4.45'
 if [ "${PHPSelect}" = "1" ]; then
     Php_Ver='php-5.2.17'
 elif [ "${PHPSelect}" = "2" ]; then

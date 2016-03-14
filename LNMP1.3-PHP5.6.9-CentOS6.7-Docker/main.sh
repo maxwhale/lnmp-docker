@@ -4,11 +4,11 @@ Dispaly_Selection()
 {
 #set mysql root password
 
-    DB_Root_Password="LNMP123"
+    DB_Root_Password="root"
     Echo_Yellow "Please setup root password of MySQL.(Default password: root)"
     #read -p "Please enter: " DB_Root_Password
     if [ "${DB_Root_Password}" = "" ]; then
-        DB_Root_Password="LNMP123"
+        DB_Root_Password="root"
     fi
     echo "MySQL root password: ${DB_Root_Password}"
 
@@ -22,10 +22,12 @@ Dispaly_Selection()
     case "${InstallInnodb}" in
     [yY][eE][sS]|[yY])
         echo "You will enable the InnoDB Storage Engine"
-    ;;
+        InstallInnodb="y"
+        ;;
     [nN][oO]|[nN])
         echo "You will disable the InnoDB Storage Engine!"
-    ;;
+        InstallInnodb="n"
+        ;;
     *)
         echo "No input,The InnoDB Storage Engine will enable."
         InstallInnodb="y"
@@ -86,7 +88,7 @@ Dispaly_Selection()
 #which PHP Version do you want to install?
     echo "==========================="
 
-    PHPSelect="6"
+    PHPSelect="3"
     Echo_Yellow "You have 6 options for your PHP install."
     echo "1: Install PHP 5.2.17"
     echo "2: Install PHP 5.3.29"
@@ -99,10 +101,10 @@ Dispaly_Selection()
     case "${PHPSelect}" in
     1)
         echo "You will install PHP 5.2.17"
-    ;;
+        ;;
     2)
         echo "You will install PHP 5.3.29"
-    ;;
+        ;;
     3)
         echo "You will Install PHP 5.4.45"
         ;;
@@ -117,7 +119,7 @@ Dispaly_Selection()
         ;;
     *)
         echo "No input,You will install PHP 5.4.45"
-        PHPSelect="6"
+        PHPSelect="3"
     esac
 
 #which Memory Allocator do you want to install?
@@ -133,13 +135,13 @@ Dispaly_Selection()
     case "${SelectMalloc}" in
     1)
         echo "You will install not install Memory Allocator."
-    ;;
+        ;;
     2)
         echo "You will install JeMalloc"
-    ;;
+        ;;
     3)
         echo "You will Install TCMalloc"
-    ;;
+        ;;
     *)
         echo "No input,You will not install Memory Allocator."
         SelectMalloc="1"
@@ -210,12 +212,11 @@ Kill_PM()
     fi
 }
 
-    OLDCONFIG=`stty -g`
+OLDCONFIG=`stty -g`
     stty -icanon -echo min 1 time 0
     #dd count=1 2>/dev/null
     stty ${OLDCONFIG}
     . include/version.sh
-
 
 Press_Start()
 {
