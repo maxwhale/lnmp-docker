@@ -1,13 +1,13 @@
 #
 # MAINTAINER          Max
 # DOCKER-VERSION      1.10
-# CENTOS-VERSION      6.7
+# CENTOS-VERSION      7
 # LNMP-VERSION        1.3 www.lnmp.org
-# Dockerfile-VERSION  3.0
-# DATE                03/14/2016
+# Dockerfile-VERSION  1.0
+# DATE                03/15/2016
 #
 
-FROM centos:6.7
+FROM centos:7
 MAINTAINER Max
 
 ENV TZ "Asia/Shanghai"
