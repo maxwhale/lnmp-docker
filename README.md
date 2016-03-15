@@ -112,3 +112,34 @@ Root password: LNMP123
 
 Mysql root password: LNMP123
 
+## LAMP1.3 PHP7.0.3 CentOS6.7 Docker
+
+LNMP1.3 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
+
+CentOS verison: 6.7
+
+Nginx version: 1.8.0
+
+Mysql verison: 5.5
+
+PHP verison: 7.0.3
+
+Root password: LNMP123
+
+Mysql root password: LNMP123
+
+## LAMP1.3 PHP7.0.3 CentOS7 Docker
+
+LNMP1.3 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
+
+CentOS verison: 7
+
+Nginx version: 1.8.0
+
+Mysql verison: 5.5
+
+PHP verison: 7.0.3
+
+Root password: LNMP123
+
+Mysql root password: LNMP123
