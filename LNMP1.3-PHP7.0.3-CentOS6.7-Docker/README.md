@@ -4,7 +4,7 @@ LNMP1.3 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
 CentOS verison: 6.7 (64bit)
 
-Nginx version: 1.8.0
+Nginx version: 1.8.1
 
 Mysql verison: 5.5
 

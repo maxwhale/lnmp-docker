@@ -35,6 +35,9 @@ RUN chmod +x /root/lnmp1.3-full/install.sh
 RUN cd /root/lnmp1.3-full && \   
     ./install.sh lnmp
 
+RUN cd /root/lnmp1.3-full/src && \
+    rm -rf `ls -I patch`
+    
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh

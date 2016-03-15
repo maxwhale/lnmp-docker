@@ -4,11 +4,11 @@ Dispaly_Selection()
 {
 #set mysql root password
 
-    DB_Root_Password="root"
+    DB_Root_Password="LNMP123"
     Echo_Yellow "Please setup root password of MySQL.(Default password: root)"
     #read -p "Please enter: " DB_Root_Password
     if [ "${DB_Root_Password}" = "" ]; then
-        DB_Root_Password="root"
+        DB_Root_Password="LNMP123"
     fi
     echo "MySQL root password: ${DB_Root_Password}"
 
