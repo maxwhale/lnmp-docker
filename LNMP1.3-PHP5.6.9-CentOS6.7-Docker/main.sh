@@ -88,7 +88,7 @@ Dispaly_Selection()
 #which PHP Version do you want to install?
     echo "==========================="
 
-    PHPSelect="3"
+    PHPSelect="6"
     Echo_Yellow "You have 6 options for your PHP install."
     echo "1: Install PHP 5.2.17"
     echo "2: Install PHP 5.3.29"
@@ -119,7 +119,7 @@ Dispaly_Selection()
         ;;
     *)
         echo "No input,You will install PHP 5.4.45"
-        PHPSelect="3"
+        PHPSelect="6"
     esac
 
 #which Memory Allocator do you want to install?
