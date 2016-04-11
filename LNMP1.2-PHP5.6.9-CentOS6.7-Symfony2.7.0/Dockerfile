@@ -31,7 +31,9 @@ RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-che
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
+ADD nginx.conf /root/lnmp1.2-full/conf/nginx.conf
 ADD php.sh /root/lnmp1.2-full/include/php.sh
+ADD symfony.conf /root/lnmp1.2-full/conf/rewrite/symfony.conf
 RUN chmod +x /root/lnmp1.2-full/centos.sh
 RUN cd /root/lnmp1.2-full && \   
     ./centos.sh
@@ -39,15 +41,11 @@ RUN cd /root/lnmp1.2-full && \
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
 
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
 RUN curl -LsS http://symfony.com/installer > symfony.phar
 RUN mv symfony.phar /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
 RUN cd /home/wwwroot/default/
 RUN symfony new test 2.7.0
-RUN cd /home/wwwroot/default/test && \
-    composer install
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
