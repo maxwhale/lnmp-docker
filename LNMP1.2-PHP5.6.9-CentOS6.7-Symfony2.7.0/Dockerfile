@@ -17,7 +17,7 @@ ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
 # Update
-# RUN yum -y update
+RUN yum -y update
 
 RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
@@ -31,6 +31,7 @@ RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-che
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
+ADD php.sh /root/lnmp1.2-full/include/php.sh
 RUN chmod +x /root/lnmp1.2-full/centos.sh
 RUN cd /root/lnmp1.2-full && \   
     ./centos.sh
@@ -45,8 +46,8 @@ RUN mv symfony.phar /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
 RUN cd /home/wwwroot/default/
 RUN symfony new test 2.7.0
-RUN php app/console server:run
-RUN composer install
+RUN cd /home/wwwroot/default/test && \
+    composer install
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
@@ -57,11 +58,6 @@ ENV ROOT_PASS LNMP123
 
 VOLUME ["/home"]
 
-EXPOSE 80 
-EXPOSE 21 
-EXPOSE 22 
-EXPOSE 3306
-EXPOSE 6379
-EXPOSE 11211
+EXPOSE 80 21 22 3306 6379 11211
 
 CMD ["/run.sh"]
