@@ -31,15 +31,16 @@ RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-che
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
-ADD nginx.conf /root/lnmp1.2-full/conf/nginx.conf
-ADD php.sh /root/lnmp1.2-full/include/php.sh
-ADD symfony.conf /root/lnmp1.2-full/conf/rewrite/symfony.conf
 RUN chmod +x /root/lnmp1.2-full/centos.sh
 RUN cd /root/lnmp1.2-full && \   
     ./centos.sh
 
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
+
+ADD nginx.conf /usr/local/nginx/conf/nginx.conf
+ADD symfony.conf /usr/local/nginx/conf/symfony.conf
+ADD symfony.sample.com.conf /usr/local/nginx/conf/vhost/symfony.sample.com.conf
 
 RUN curl -LsS http://symfony.com/installer > symfony.phar && \
     mv symfony.phar /usr/local/bin/symfony && \
