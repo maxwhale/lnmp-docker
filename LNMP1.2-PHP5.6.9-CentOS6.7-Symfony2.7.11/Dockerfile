@@ -41,11 +41,13 @@ RUN cd /root/lnmp1.2-full && \
 RUN cd /root/lnmp1.2-full/src && \
     rm -rf `ls -I patch`
 
-RUN curl -LsS http://symfony.com/installer > symfony.phar
-RUN mv symfony.phar /usr/local/bin/symfony
-RUN chmod a+x /usr/local/bin/symfony
-RUN cd /home/wwwroot/default/
-RUN symfony new test 2.7.11
+RUN curl -LsS http://symfony.com/installer > symfony.phar && \
+    mv symfony.phar /usr/local/bin/symfony && \
+    chmod a+x /usr/local/bin/symfony 
+RUN cd /home/wwwroot/default/ && \
+    symfony new test 2.7.11
+RUN cd /home/wwwroot/default/test/app && \
+    chmod -R 777 cache logs
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
