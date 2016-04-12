@@ -45,7 +45,7 @@ RUN curl -LsS http://symfony.com/installer > symfony.phar
 RUN mv symfony.phar /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
 RUN cd /home/wwwroot/default/
-RUN symfony new test 2.7.0
+RUN symfony new test 2.7.11
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
