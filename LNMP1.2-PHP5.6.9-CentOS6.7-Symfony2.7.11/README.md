@@ -1,4 +1,4 @@
-# LNMP1.2-PHP5.6.9-CentOS6.7-Symfony2.7.0
+# LNMP1.2-PHP5.6.9-CentOS6.7-Symfony2.7.11
 
 LNMP1.2 (Linux, Nginx, Mysql, PHP). For details, please check LNMP.org
 
