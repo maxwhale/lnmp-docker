@@ -47,6 +47,7 @@ RUN curl -LsS http://symfony.com/installer > symfony.phar && \
     chmod a+x /usr/local/bin/symfony 
 RUN cd /home/wwwroot/default/ && \
     symfony new test 2.7.11
+RUN chown -R www:www /home/wwwroot/default/test
 RUN cd /home/wwwroot/default/test/app && \
     chmod -R 777 cache logs
 
