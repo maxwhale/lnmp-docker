@@ -93,9 +93,9 @@ Dispaly_Selection()
     echo "1: Install PHP 5.2.17"
     echo "2: Install PHP 5.3.29"
     echo "3: Install PHP 5.4.45 (Default)"
-    echo "4: Install PHP 5.5.32"
-    echo "5: Install PHP 5.6.18"
-    echo "6: Install PHP 7.0.3"
+    echo "4: Install PHP 5.5.36"
+    echo "5: Install PHP 5.6.22"
+    echo "6: Install PHP 7.0.7"
     #read -p "Enter your choice (1, 2, 3, 4, 5 or 6): " PHPSelect
 
     case "${PHPSelect}" in
@@ -109,13 +109,13 @@ Dispaly_Selection()
         echo "You will Install PHP 5.4.45"
         ;;
     4)
-        echo "You will install PHP 5.5.32"
+        echo "You will install PHP 5.5.36"
         ;;
     5)
-        echo "You will install PHP 5.6.18"
+        echo "You will install PHP 5.6.22"
         ;;
     6)
-        echo "You will install PHP 7.0.3"
+        echo "You will install PHP 7.0.7"
         ;;
     *)
         echo "No input,You will install PHP 5.4.45"
@@ -185,13 +185,13 @@ Apache_Selection()
     ApacheSelect="1"
     Echo_Yellow "You have 2 options for your Apache install."
     echo "1: Install Apache 2.2.31 (Default)"
-    echo "2: Install Apache 2.4.18"
+    echo "2: Install Apache 2.4.20"
     read -p "Enter your choice (1 or 2): " ApacheSelect
 
     if [ "${ApacheSelect}" = "1" ]; then
         echo "You will install Apache 2.2.31"
     elif [ "${ApacheSelect}" = "2" ]; then
-        echo "You will install Apache 2.4.18"
+        echo "You will install Apache 2.4.20"
     else
         echo "No input,You will install Apache 2.2.31"
         ApacheSelect="1"
