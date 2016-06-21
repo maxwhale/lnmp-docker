@@ -26,7 +26,7 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.3.
-RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.3-full.tar.gz --no-check-certificate && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
+RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.3-full.tar.gz --no-check-certificate && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
 
 ADD centos.sh /root/lnmp1.3-full/centos.sh
 ADD main-centos.sh /root/lnmp1.3-full/include/main-centos.sh
@@ -34,9 +34,6 @@ ADD version-centos.sh /root/lnmp1.3-full/include/version-centos.sh
 RUN chmod +x /root/lnmp1.3-full/centos.sh
 RUN cd /root/lnmp1.3-full && \   
     ./centos.sh
-
-RUN cd /root/lnmp1.3-full/src && \
-    rm -rf `ls -I patch`
 
 ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 ADD symfony.conf /usr/local/nginx/conf/symfony.conf
