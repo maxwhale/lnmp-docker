@@ -94,7 +94,7 @@ Init_Install()
     elif [ "${DBSelect}" = "2" ]; then
         Install_MySQL_55
     elif [ "${DBSelect}" = "3" ]; then
-        Install_MySQL_55
+        Install_MySQL_56
     elif [ "${DBSelect}" = "4" ]; then
         Install_MariaDB_5
     elif [ "${DBSelect}" = "5" ]; then
@@ -103,7 +103,6 @@ Init_Install()
         Install_MySQL_57
     fi
     TempMycnf_Clean
-    Export_PHP_Autoconf
 }
 
 LNMP_Stack()
@@ -114,7 +113,7 @@ LNMP_Stack()
     elif [ "${PHPSelect}" = "2" ]; then
         Install_PHP_53
     elif [ "${PHPSelect}" = "3" ]; then
-        Install_PHP_7
+        Install_PHP_54
     elif [ "${PHPSelect}" = "4" ]; then
         Install_PHP_55
     elif [ "${PHPSelect}" = "5" ]; then
