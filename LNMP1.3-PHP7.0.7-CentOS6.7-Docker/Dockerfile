@@ -17,9 +17,9 @@ ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
 # Update
-RUN yum -y update
+# RUN yum -y update
 
-RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen && \
+RUN yum -y wget install tar screen htop passwd nano openssh-server vsftpd pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_dsa_key && \
     sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
