@@ -1,10 +1,10 @@
 #
 # MAINTAINER          Max
-# DOCKER-VERSION      1.10
+# DOCKER-VERSION      2.00
 # CENTOS-VERSION      6.7
 # LNMP-VERSION        1.3 www.lnmp.org
 # Dockerfile-VERSION  1.0
-# DATE                06/17/2016
+# DATE                10/31/2016
 #
 
 FROM centos:6.7
