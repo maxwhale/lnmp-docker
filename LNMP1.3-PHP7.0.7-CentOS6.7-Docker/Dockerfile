@@ -26,7 +26,7 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.3.
-RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.3-full.tar.gz --no-check-certificate && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
+RUN wget -c ftp://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
 
 ADD install.sh /root/lnmp1.3-full/install.sh
 ADD main.sh /root/lnmp1.3-full/include/main.sh
