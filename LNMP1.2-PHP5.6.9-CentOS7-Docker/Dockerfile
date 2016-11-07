@@ -3,8 +3,8 @@
 # DOCKER-VERSION      1.10
 # CENTOS-VERSION      7
 # LNMP-VERSION        1.2 www.lnmp.org
-# Dockerfile-VERSION  2.4
-# DATE                02/23/2016
+# Dockerfile-VERSION  3.0
+# DATE                11/07/2016
 #
 
 FROM centos:7
@@ -17,7 +17,7 @@ ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
 # Update
-RUN yum -y update
+# RUN yum -y update
 
 RUN yum -y install wget tar screen htop passwd nano openssh-server pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
@@ -27,7 +27,7 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server pwgen && \
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.2.
-RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
+RUN wget -c ftp://soft.vpser.net/lnmp/lnmp1.2-full.tar.gz && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
 
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
