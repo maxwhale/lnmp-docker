@@ -26,16 +26,16 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.3.
-RUN wget -c http://maxwhale.cn/download/lnmp1.3.tar.gz && tar zxf lnmp1.3.tar.gz -C root && rm -rf lnmp1.3.tar.gz
+RUN wget -c http://maxwhale.cn/download/lnmp1.3-full.tar.gz && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
 
-ADD install.sh /root/lnmp1.3/install.sh
-ADD main.sh /root/lnmp1.3/include/main.sh
-ADD version.sh /root/lnmp1.3/include/version.sh
-RUN chmod +x /root/lnmp1.3/install.sh
-RUN cd /root/lnmp1.3 && \   
+ADD install.sh /root/lnmp1.3-full/install.sh
+ADD main.sh /root/lnmp1.3-full/include/main.sh
+ADD version.sh /root/lnmp1.3-full/include/version.sh
+RUN chmod +x /root/lnmp1.3-full/install.sh
+RUN cd /root/lnmp1.3-full && \   
     ./install.sh lnmp
 
-RUN cd /root/lnmp1.3/src && \
+RUN cd /root/lnmp1.3-full/src && \
     rm -rf `ls -I patch`
 
 ADD set_root_pw.sh /set_root_pw.sh
