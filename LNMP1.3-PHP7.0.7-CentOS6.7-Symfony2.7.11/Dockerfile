@@ -3,8 +3,8 @@
 # DOCKER-VERSION      1.10
 # CENTOS-VERSION      6.7
 # LNMP-VERSION        1.3 www.lnmp.org
-# Dockerfile-VERSION  3.0
-# DATE                11/07/2016
+# Dockerfile-VERSION  3.1
+# DATE                11/11/2016
 #
 
 FROM centos:6.7
@@ -26,7 +26,7 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.3.
-RUN wget -c http://dl.lancdn.com/landian/dev/lnmp/lnmp1.3-full.tar.gz && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
+RUN wget -c http://maxwhale.cn/download/lnmp1.3-full.tar.gz && tar zxf lnmp1.3-full.tar.gz -C root && rm -rf lnmp1.3-full.tar.gz
 
 ADD centos.sh /root/lnmp1.3-full/centos.sh
 ADD main-centos.sh /root/lnmp1.3-full/include/main-centos.sh
@@ -48,6 +48,7 @@ RUN chown -R www:www /home/wwwroot/default/test
 RUN cd /home/wwwroot/default/test/app && \
     chmod -R 777 cache logs
 
+ADD php-fpm.conf /usr/local/php/etc/php-fpm.conf
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
