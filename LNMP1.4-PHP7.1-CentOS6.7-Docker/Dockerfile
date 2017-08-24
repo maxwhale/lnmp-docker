@@ -30,7 +30,7 @@ RUN wget -c http://maxwhale.cn/download/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-f
 
 ADD install.sh /root/lnmp1.4-full/install.sh
 ADD main.sh /root/lnmp1.4-full/include/main.sh
-ADD version.sh /root/lnmp1.4-full/include/version.sh
+#ADD version.sh /root/lnmp1.4-full/include/version.sh
 RUN chmod +x /root/lnmp1.4-full/install.sh
 RUN cd /root/lnmp1.4-full && \   
     ./install.sh lnmp
@@ -38,7 +38,7 @@ RUN cd /root/lnmp1.4-full && \
 #RUN cd /root/lnmp1.4-full/src && \
 #rm -rf `ls -I patch`
 
-ADD php-fpm.conf /usr/local/php/etc/php-fpm.conf
+#ADD php-fpm.conf /usr/local/php/etc/php-fpm.conf
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
