@@ -4,7 +4,7 @@
 # CENTOS-VERSION      6.7
 # LNMP-VERSION        1.4 www.lnmp.org
 # Dockerfile-VERSION  1.0
-# DATE                06/14/2017
+# DATE                08/25/2017
 #
 
 FROM centos:6.7
@@ -26,19 +26,14 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
     sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
 # Download and install lnmp1.4.
-RUN wget -c http://maxwhale.cn/download/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz -C root && rm -rf lnmp1.4-full.tar.gz
+RUN wget -c http://soft.vpser.net/lnmp/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz -C root && rm -rf lnmp1.4-full.tar.gz
 
-ADD install.sh /root/lnmp1.4-full/install.sh
+#ADD install.sh /root/lnmp1.4-full/install.sh
 ADD main.sh /root/lnmp1.4-full/include/main.sh
-#ADD version.sh /root/lnmp1.4-full/include/version.sh
 RUN chmod +x /root/lnmp1.4-full/install.sh
 RUN cd /root/lnmp1.4-full && \   
     ./install.sh lnmp
 
-#RUN cd /root/lnmp1.4-full/src && \
-#rm -rf `ls -I patch`
-
-#ADD php-fpm.conf /usr/local/php/etc/php-fpm.conf
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
