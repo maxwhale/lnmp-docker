@@ -257,9 +257,8 @@ Kill_PM()
 #    Kill_PM
 # }
 
-OLDCONFIG=`stty -g`
+    OLDCONFIG=`stty -g`
     stty -icanon -echo min 1 time 0
-    #dd count=1 2>/dev/null
     stty ${OLDCONFIG}
     . include/version.sh
 

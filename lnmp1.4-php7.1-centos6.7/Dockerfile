@@ -28,11 +28,11 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
 # Download and install lnmp1.4.
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz -C root && rm -rf lnmp1.4-full.tar.gz
 
-#ADD install.sh /root/lnmp1.4-full/install.sh
 ADD main.sh /root/lnmp1.4-full/include/main.sh
+ADD version.sh /root/lnmp1.4-full/include/version.sh
 RUN chmod +x /root/lnmp1.4-full/install.sh
 RUN cd /root/lnmp1.4-full && \   
-    ./install.sh lnmp
+    ./install.sh
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
