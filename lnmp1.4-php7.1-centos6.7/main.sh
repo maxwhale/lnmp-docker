@@ -245,27 +245,21 @@ Kill_PM()
     fi
 }
 
-Press_Install()
-{
+
     echo ""
-    Echo_Green "Press any key to install...or Press Ctrl+c to cancel s1"
+    Echo_Green "Press any key to install...or Press Ctrl+c to cancel"
     OLDCONFIG=`stty -g`
     stty -icanon -echo min 1 time 0
     dd count=1 2>/dev/null
     stty ${OLDCONFIG}
     . include/version.sh
     Kill_PM
-}
 
- #   OLDCONFIG=`stty -g`
- #   stty -icanon -echo min 1 time 0
- #   stty ${OLDCONFIG}
- #   . include/version.sh
 
 Press_Start()
 {
     echo ""
-    Echo_Green "Press any key to start...or Press Ctrl+c to cancel s2"
+    Echo_Green "Press any key to start...or Press Ctrl+c to cancel"
     OLDCONFIG=`stty -g`
     stty -icanon -echo min 1 time 0
     dd count=1 2>/dev/null
