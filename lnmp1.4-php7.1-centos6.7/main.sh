@@ -257,10 +257,10 @@ Kill_PM()
 #    Kill_PM
 # }
 
-    OLDCONFIG=`stty -g`
-    stty -icanon -echo min 1 time 0
-    stty ${OLDCONFIG}
-    . include/version.sh
+ #   OLDCONFIG=`stty -g`
+ #   stty -icanon -echo min 1 time 0
+ #   stty ${OLDCONFIG}
+ #   . include/version.sh
 
 Press_Start()
 {

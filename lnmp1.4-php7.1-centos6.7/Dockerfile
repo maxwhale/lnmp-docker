@@ -16,9 +16,6 @@ ENV TERM xterm
 ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
-# Update
-# RUN yum -y update
-
 RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_dsa_key && \
@@ -29,7 +26,6 @@ RUN yum -y install wget tar screen htop passwd nano openssh-server vsftpd pwgen 
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz -C root && rm -rf lnmp1.4-full.tar.gz
 
 ADD main.sh /root/lnmp1.4-full/include/main.sh
-ADD version.sh /root/lnmp1.4-full/include/version.sh
 RUN chmod +x /root/lnmp1.4-full/install.sh
 RUN cd /root/lnmp1.4-full && \   
     ./install.sh
