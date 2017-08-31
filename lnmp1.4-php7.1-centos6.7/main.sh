@@ -245,7 +245,8 @@ Kill_PM()
     fi
 }
 
-
+Press_Install()
+{
     echo ""
     Echo_Green "Press any key to install...or Press Ctrl+c to cancel"
     OLDCONFIG=`stty -g`
@@ -254,7 +255,7 @@ Kill_PM()
     stty ${OLDCONFIG}
     . include/version.sh
     Kill_PM
-
+}
 
 Press_Start()
 {
